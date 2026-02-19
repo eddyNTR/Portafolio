@@ -65,9 +65,18 @@ const useContactForm = (): UseContactFormReturn => {
     setStatus('sending');
 
     try {
-      // --- Sustituye esto con tu lógica real de envío ---
-      await new Promise((res) => setTimeout(res, 1500));
-      // --------------------------------------------------
+      const response = await fetch('https://formspree.io/f/mreaaqbv', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Error en el envío');
+      }
 
       setStatus('success');
       setFormData(INITIAL_FORM); // Limpia el formulario tras éxito
