@@ -23,7 +23,7 @@ export const PERSONAL_INFO = {
   cv:       `${import.meta.env.BASE_URL}cv.pdf`,
   github:   'https://github.com/eddyNTR',
   linkedin: 'https://www.linkedin.com/in/eddy-noe-torrico-rocha-554889317/',
-  email:    'eddy@example.com',
+  email:    'eddy.noe92@gmail.com',
   location: 'Bolivia',
 };
 
