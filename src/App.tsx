@@ -1,6 +1,7 @@
 // App.tsx — componente raíz; solo gestiona el layout (Header + Rutas + Footer)
 // La configuración de rutas vive en routes/index.tsx
-import { BrowserRouter } from 'react-router-dom'
+// HashRouter en lugar de BrowserRouter para compatibilidad con GitHub Pages
+import { HashRouter as BrowserRouter } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import AppRoutes from './routes'
