@@ -5,6 +5,7 @@
 // personalizar el contenido del portafolio.
 // =============================================================================
 
+import logo from '../assets/logo.png';
 import type { Project, Skill, NavLink, ContactInfo, Stat } from './types';
 
 // ---------------------------------------------------------------------------
@@ -18,7 +19,7 @@ export const PERSONAL_INFO = {
   tagline:   'Desarrollador web y de escritorio apasionado por crear experiencias funcionales y visuales.',
   bio1: 'soy un apasionado del desarrollo web y de aplicaciones de escritorio, donde encuentro un equilibrio perfecto entre creatividad y tecnología.',
   bio2: 'Me encanta transformar ideas en soluciones funcionales y visuales, ya sea creando experiencias interactivas en la web o desarrollando software robusto para el escritorio.',
-  photo:    `${import.meta.env.BASE_URL}logo.png`,
+  photo:    logo,
   cv:       `${import.meta.env.BASE_URL}cv.pdf`,
   github:   'https://github.com/eddyNTR',
   linkedin: 'https://www.linkedin.com/in/eddy-noe-torrico-rocha-554889317/',
