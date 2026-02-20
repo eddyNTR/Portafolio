@@ -1,3 +1,4 @@
+import { Icon } from '@iconify/react';
 import { Button, SectionHeader, SectionWrapper, FadeRight, FadeLeft, StaggerContainer, StaggerItem } from '../components';
 import useContactForm from '../hooks/useContactForm';
 import { CONTACT_INFO } from '../core/data';
@@ -22,8 +23,8 @@ const ContactPage = () => {
               {CONTACT_INFO.map((info) => (
                 <StaggerItem key={info.label}>
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-primary/20 border border-primary/30 flex items-center justify-center text-xl shrink-0">
-                      {info.icon}
+                    <div className="w-12 h-12 rounded-xl bg-primary/20 border border-primary/30 flex items-center justify-center text-xl shrink-0 text-primary-light">
+                      <Icon icon={info.iconName} width="24" height="24" />
                     </div>
                     <div>
                       <p className="text-gray-500 text-xs uppercase tracking-wider">{info.label}</p>

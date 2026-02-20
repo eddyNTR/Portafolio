@@ -129,8 +129,8 @@ export const EXTRA_TECHS = ['Docker', 'MongoDB', 'PostgreSQL', 'Firebase', 'REST
 // Información de contacto mostrada en la sección Contactame
 // ---------------------------------------------------------------------------
 export const CONTACT_INFO: ContactInfo[] = [
-  { icon: '📧', label: 'Email',     value: PERSONAL_INFO.email,    link: `mailto:${PERSONAL_INFO.email}` },
-  { icon: '💼', label: 'LinkedIn',  value: 'https://www.linkedin.com/in/eddy-noe-torrico-rocha-554889317/', link: PERSONAL_INFO.linkedin          },
-  { icon: '🐙', label: 'GitHub',    value: 'https://github.com/eddyNTR',      link: PERSONAL_INFO.github            },
-  { icon: '📍', label: 'Ubicación', value: PERSONAL_INFO.location, link: null                            },
+  { iconName: 'lucide:mail',      label: 'Email',     value: PERSONAL_INFO.email,    link: `mailto:${PERSONAL_INFO.email}` },
+  { iconName: 'lucide:linkedin',  label: 'LinkedIn',  value: 'LinkedIn', link: PERSONAL_INFO.linkedin          },
+  { iconName: 'lucide:github',    label: 'GitHub',    value: 'GitHub',      link: PERSONAL_INFO.github            },
+  { iconName: 'lucide:map-pin',   label: 'Ubicación', value: PERSONAL_INFO.location, link: null                            },
 ];

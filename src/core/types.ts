@@ -36,7 +36,7 @@ export interface NavLink {
 
 /** Estructura de un item de información de contacto */
 export interface ContactInfo {
-  icon: string;
+  iconName: string; // Nombre del icono en Iconify (ej: lucide:mail)
   label: string;
   value: string;
   link: string | null;
