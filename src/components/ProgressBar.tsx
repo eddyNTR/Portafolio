@@ -4,19 +4,25 @@
 // Se usa en la sección de Habilidades para mostrar el nivel de cada skill.
 // =============================================================================
 
+import { Icon } from '@iconify/react';
+
 interface ProgressBarProps {
-  icon: string;    // Emoji representativo del skill
-  name: string;    // Nombre de la tecnología
-  level: number;   // Porcentaje de nivel (0-100)
+  iconName: string; // Nombre del icono en Iconify
+  color?: string;   // Color opcional
+  name: string;     // Nombre de la tecnología
+  level: number;    // Porcentaje de nivel (0-100)
 }
 
-const ProgressBar = ({ icon, name, level }: ProgressBarProps) => {
+const ProgressBar = ({ iconName, color, name, level }: ProgressBarProps) => {
   return (
     <div>
       {/* Fila superior: ícono + nombre a la izquierda, porcentaje a la derecha */}
       <div className="flex justify-between items-center mb-1">
         <div className="flex items-center gap-2">
-          <span>{icon}</span>
+          {/* Iconify component */}
+          <span className="text-2xl flex items-center justify-center p-1 bg-white/5 rounded-md" style={{ color: color || 'inherit' }}>
+             <Icon icon={iconName} />
+          </span>
           <span className="text-gray-300 font-medium text-sm">{name}</span>
         </div>
         <span className="text-primary-light text-sm font-semibold">{level}%</span>

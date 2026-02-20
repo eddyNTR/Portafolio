@@ -20,7 +20,8 @@ export interface Project {
 export interface Skill {
   name: string;
   level: number;            // Porcentaje 0-100
-  icon: string;             // Emoji representativo
+  iconName: string;         // Nombre del icono en Iconify (ej: logos:react)
+  color?: string;           // Color hex opcional para el icono
   category: SkillCategory;
 }
 

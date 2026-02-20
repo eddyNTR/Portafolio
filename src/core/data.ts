@@ -95,22 +95,24 @@ export const PROJECTS: Project[] = [
 
 // ---------------------------------------------------------------------------
 // Habilidades técnicas agrupadas por categoría
+// Usamos nombres de iconos compatibles con @iconify/react
+// Busca más iconos en: https://icon-sets.iconify.design/
 // ---------------------------------------------------------------------------
 export const SKILLS: Skill[] = [
   // Frontend
-  { name: 'React',        level: 85, icon: '⚛️', category: 'frontend' },
-  { name: 'TypeScript',   level: 75, icon: '🔷', category: 'frontend' },
-  { name: 'JavaScript',   level: 90, icon: '🟡', category: 'frontend' },
-  { name: 'HTML/CSS',     level: 95, icon: '🎨', category: 'frontend' },
-  { name: 'Tailwind CSS', level: 80, icon: '💨', category: 'frontend' },
+  { name: 'React',        level: 85, iconName: 'logos:react',           category: 'frontend' },
+  { name: 'TypeScript',   level: 75, iconName: 'logos:typescript-icon', category: 'frontend' },
+  { name: 'JavaScript',   level: 90, iconName: 'logos:javascript',      category: 'frontend' },
+  { name: 'HTML/CSS',     level: 95, iconName: 'logos:html-5',          category: 'frontend' },
+  { name: 'Tailwind CSS', level: 80, iconName: 'logos:tailwindcss-icon', category: 'frontend' },
   // Backend
-  { name: 'Python',       level: 80, icon: '🐍', category: 'backend'  },
-  { name: 'Node.js',      level: 70, icon: '🟩', category: 'backend'  },
-  { name: 'SQL',          level: 75, icon: '🗄️', category: 'backend'  },
+  { name: 'Python',       level: 80, iconName: 'logos:python',          category: 'backend'  },
+  { name: 'Node.js',      level: 70, iconName: 'logos:nodejs-icon',     category: 'backend'  },
+  { name: 'SQL',          level: 75, iconName: 'tabler:database', color: '#00bcd4', category: 'backend'  },
   // Herramientas
-  { name: 'Git/GitHub',   level: 85, icon: '🐙', category: 'tools'    },
-  { name: 'Figma',        level: 65, icon: '🖌️', category: 'tools'    },
-  { name: 'VS Code',      level: 95, icon: '💻', category: 'tools'    },
+  { name: 'Git/GitHub',   level: 85, iconName: 'logos:github-icon',     category: 'tools'    },
+  { name: 'Figma',        level: 65, iconName: 'logos:figma',           category: 'tools'    },
+  { name: 'VS Code',      level: 95, iconName: 'logos:visual-studio-code', category: 'tools' },
 ];
 
 /** Categorías de habilidades para el renderizado en Skills.tsx */

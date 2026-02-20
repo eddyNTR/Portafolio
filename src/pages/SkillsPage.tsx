@@ -21,7 +21,13 @@ const SkillsPage = () => {
                   {SKILLS
                     .filter((s) => s.category === cat.key)
                     .map((skill) => (
-                      <ProgressBar key={skill.name} icon={skill.icon} name={skill.name} level={skill.level} />
+                      <ProgressBar 
+                        key={skill.name} 
+                        iconName={skill.iconName} 
+                        name={skill.name} 
+                        level={skill.level} 
+                        color={skill.color}
+                      />
                     ))}
                 </div>
               </div>
