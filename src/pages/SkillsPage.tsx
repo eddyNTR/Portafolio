@@ -38,10 +38,10 @@ const SkillsPage = () => {
         {/* Badges escalonados */}
         <FadeUp delay={0.3} className="mt-16 text-center">
           <p className="text-gray-400 mb-6">También trabajo con:</p>
-          <StaggerContainer className="flex flex-wrap justify-center gap-3" stagger={0.04}>
+          <StaggerContainer className="flex flex-wrap justify-center gap-2 sm:gap-3" stagger={0.04}>
             {EXTRA_TECHS.map((tech) => (
-              <StaggerItem key={tech}>
-                <span className="px-4 py-2 bg-primary/10 border border-primary/30 text-primary-light rounded-full text-sm font-medium hover:bg-primary/20 transition-colors">
+              <StaggerItem key={tech} className="inline-flex">
+                <span className="px-3 py-1.5 sm:px-4 sm:py-2 bg-primary/10 border border-primary/30 text-primary-light rounded-full text-xs sm:text-sm font-medium hover:bg-primary/20 transition-colors whitespace-nowrap">
                   {tech}
                 </span>
               </StaggerItem>

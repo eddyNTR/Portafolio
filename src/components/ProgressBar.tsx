@@ -19,9 +19,9 @@ const ProgressBar = ({ iconName, color, name, level }: ProgressBarProps) => {
       {/* Fila superior: ícono + nombre a la izquierda, porcentaje a la derecha */}
       <div className="flex justify-between items-center mb-1">
         <div className="flex items-center gap-2">
-          {/* Iconify component */}
-          <span className="text-2xl flex items-center justify-center p-1 bg-white/5 rounded-md" style={{ color: color || 'inherit' }}>
-             <Icon icon={iconName} />
+          {/* Contenedor de tamaño fijo para igualar todos los iconos */}
+          <span className="w-8 h-8 flex items-center justify-center shrink-0 bg-white/5 rounded-md" style={{ color: color || 'inherit' }}>
+            <Icon icon={iconName} width={20} height={20} />
           </span>
           <span className="text-gray-300 font-medium text-sm">{name}</span>
         </div>

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 // Los links vienen de core/data para mantener un único punto de verdad
-import { NAV_LINKS } from '../core/data';
+import { NAV_LINKS, PERSONAL_INFO } from '../core/data';
 
 // El componente Header maneja la navegación multi-página y es responsivo
 const Header = () => {
@@ -19,8 +19,12 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo: Link lleva al inicio sin recargar la página */}
           <div className="shrink-0">
-            <Link to="/" className="text-2xl font-bold bg-linear-to-r from-primary-light to-primary text-transparent bg-clip-text">
-              Portfolio
+            <Link to="/">
+              <img
+                src={PERSONAL_INFO.photo}
+                alt={PERSONAL_INFO.name}
+                className="h-10 w-10 rounded-full object-cover ring-2 ring-primary/50 hover:ring-primary transition-all duration-300"
+              />
             </Link>
           </div>
 
