@@ -10,6 +10,7 @@ export interface Project {
   title: string;
   description: string;
   image: string;
+  images?: string[];   // Galería de imágenes (opcional); si no se define, usa [image]
   tags: string[];
   demoUrl: string;
   repoUrl: string;
