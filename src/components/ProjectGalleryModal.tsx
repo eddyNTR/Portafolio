@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 import { Icon } from '@iconify/react';
+import { useLanguage } from '../hooks/useLanguage';
+import { t } from '../core/i18n';
 
 interface Props {
   title: string;
@@ -52,6 +54,8 @@ const KbdHint = ({ keys, label }: { keys: string[]; label: string }) => (
 // ── Componente principal ─────────────────────────────────────────────────────
 
 const ProjectGalleryModal = ({ title, images, currentIndex, onClose, onPrev, onNext, onSelect }: Props) => {
+  const { lang } = useLanguage();
+  const tr = t(lang).gallery;
   useEffect(() => {
     const fn = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -94,7 +98,7 @@ const ProjectGalleryModal = ({ title, images, currentIndex, onClose, onPrev, onN
             </div>
             <div className="min-w-0">
               <h3 className="text-white font-bold text-sm sm:text-base truncate leading-tight">{title}</h3>
-              <p className="text-primary-light text-xs mt-0.5 hidden sm:block">Vista previa del proyecto</p>
+              <p className="text-primary-light text-xs mt-0.5 hidden sm:block">{tr.preview}</p>
             </div>
           </div>
           <div className="flex items-center gap-3 shrink-0 ml-4">
@@ -156,8 +160,8 @@ const ProjectGalleryModal = ({ title, images, currentIndex, onClose, onPrev, onN
 
         {/* Footer atajos — solo desktop */}
         <div className="hidden sm:flex items-center justify-between px-5 pb-4">
-          <KbdHint keys={['←', '→']} label="para navegar" />
-          <KbdHint keys={['Esc']} label="para cerrar" />
+          <KbdHint keys={['←', '→']} label={tr.navigate} />
+          <KbdHint keys={['Esc']} label={tr.close} />
         </div>
 
         <div className="block sm:hidden h-3" />

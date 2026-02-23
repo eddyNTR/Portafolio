@@ -70,6 +70,11 @@ export interface Translations {
   footer: {
     rights: string;
   };
+  gallery: {
+    preview: string;
+    navigate: string;
+    close: string;
+  };
 }
 
 // ---------------------------------------------------------------------------
@@ -167,6 +172,11 @@ export const translations: Record<Lang, Translations> = {
     footer: {
       rights: 'Todos los derechos reservados.',
     },
+    gallery: {
+      preview:  'Vista previa del proyecto',
+      navigate: 'para navegar',
+      close:    'para cerrar',
+    },
   },
 
   // ── English ───────────────────────────────────────────────────────────────
@@ -259,6 +269,11 @@ export const translations: Record<Lang, Translations> = {
     },
     footer: {
       rights: 'All rights reserved.',
+    },
+    gallery: {
+      preview:  'Project preview',
+      navigate: 'to navigate',
+      close:    'to close',
     },
   },
 };
