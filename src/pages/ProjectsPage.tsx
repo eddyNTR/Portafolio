@@ -1,6 +1,6 @@
 import { Button, SectionHeader, SectionWrapper, ProjectCard, FadeUp, StaggerContainer, StaggerItem } from '../components';
 import { PROJECTS } from '../core/data';
-import { useLanguage } from '../context/LanguageContext';
+import { useLanguage } from '../hooks/useLanguage';
 import { t } from '../core/i18n';
 
 // Página de Proyectos

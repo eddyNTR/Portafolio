@@ -2,7 +2,7 @@ import { Icon } from '@iconify/react';
 import { Button, SectionHeader, SectionWrapper, FadeRight, FadeLeft, StaggerContainer, StaggerItem } from '../components';
 import useContactForm from '../hooks/useContactForm';
 import { CONTACT_INFO } from '../core/data';
-import { useLanguage } from '../context/LanguageContext';
+import { useLanguage } from '../hooks/useLanguage';
 import { t } from '../core/i18n';
 
 // Página de Contacto

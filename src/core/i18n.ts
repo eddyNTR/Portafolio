@@ -5,7 +5,7 @@
 // Uso:  const { lang } = useLanguage();  →  t(lang).section.key
 // =============================================================================
 
-import type { Lang } from '../context/LanguageContext';
+import type { Lang } from '../context/languageContextDef';
 
 // ---------------------------------------------------------------------------
 // Interfaz de traducciones — tipado fuerte garantiza consistencia ES/EN

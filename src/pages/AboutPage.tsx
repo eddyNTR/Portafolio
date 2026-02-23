@@ -1,6 +1,6 @@
 import { Button, SectionHeader, SectionWrapper, FadeLeft, ScaleIn, StaggerContainer, StaggerItem } from '../components';
 import { PERSONAL_INFO } from '../core/data';
-import { useLanguage } from '../context/LanguageContext';
+import { useLanguage } from '../hooks/useLanguage';
 import { t } from '../core/i18n';
 
 // Página Sobre Mi

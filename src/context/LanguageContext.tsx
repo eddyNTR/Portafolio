@@ -1,26 +1,16 @@
 // =============================================================================
 // context/LanguageContext.tsx
-// Contexto global de idioma. Proporciona `lang` y `toggleLang` a toda la app.
-// Usa `useLanguage()` en cualquier componente para leer o cambiar el idioma.
+// Solo exporta el componente LanguageProvider.
+// La definición del contexto y los tipos viven en languageContextDef.ts
+// para satisfacer Fast Refresh de Vite (no mezclar componentes con exports).
 // =============================================================================
+import { useState, type ReactNode } from 'react';
+import { LanguageContext, type Lang } from './languageContextDef';
 
-import { createContext, useContext, useState, type ReactNode } from 'react';
-
-/** Idiomas soportados */
-export type Lang = 'es' | 'en';
-
-interface LanguageContextValue {
-  lang: Lang;
-  toggleLang: () => void;
-}
-
-const LanguageContext = createContext<LanguageContextValue>({
-  lang: 'es',
-  toggleLang: () => {},
-});
+export { LanguageProvider };
 
 /** Envuelve la app en App.tsx para proveer el idioma globalmente */
-export const LanguageProvider = ({ children }: { children: ReactNode }) => {
+function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLang] = useState<Lang>('es');
 
   const toggleLang = () => setLang((prev) => (prev === 'es' ? 'en' : 'es'));
@@ -30,7 +20,4 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       {children}
     </LanguageContext.Provider>
   );
-};
-
-/** Hook para consumir el contexto de idioma en cualquier componente */
-export const useLanguage = () => useContext(LanguageContext);
+}

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 // Los links vienen de core/data para mantener un único punto de verdad
 import { NAV_LINKS, PERSONAL_INFO } from '../core/data';
-import { useLanguage } from '../context/LanguageContext';
+import { useLanguage } from '../hooks/useLanguage';
 import { t, type Translations } from '../core/i18n';
 import LanguageSwitcher from './LanguageSwitcher';
 

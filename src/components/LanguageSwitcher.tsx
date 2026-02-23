@@ -4,7 +4,7 @@
 // Usa useLanguage() del contexto — no requiere props.
 // =============================================================================
 
-import { useLanguage } from '../context/LanguageContext';
+import { useLanguage } from '../hooks/useLanguage';
 
 const LanguageSwitcher = () => {
   const { lang, toggleLang } = useLanguage();

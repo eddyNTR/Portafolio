@@ -1,6 +1,6 @@
 import { SectionHeader, SectionWrapper, ProgressBar, FadeUp, StaggerContainer, StaggerItem } from '../components';
 import { SKILLS, SKILL_CATEGORIES, EXTRA_TECHS } from '../core/data';
-import { useLanguage } from '../context/LanguageContext';
+import { useLanguage } from '../hooks/useLanguage';
 import { t } from '../core/i18n';
 
 // Página de Habilidades

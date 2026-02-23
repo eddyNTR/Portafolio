@@ -1,6 +1,6 @@
 // Datos personales centralizados desde core/data
 import { PERSONAL_INFO } from '../core/data';
-import { useLanguage } from '../context/LanguageContext';
+import { useLanguage } from '../hooks/useLanguage';
 import { t } from '../core/i18n';
 
 // El Footer muestra el pie de la página con créditos y links sociales

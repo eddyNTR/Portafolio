@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Button } from '../components';
 import { PERSONAL_INFO } from '../core/data';
 import { FadeRight, FadeLeft } from '../components';
-import { useLanguage } from '../context/LanguageContext';
+import { useLanguage } from '../hooks/useLanguage';
 import { t } from '../core/i18n';
 
 // Página de Inicio — presentación principal del portfolio
