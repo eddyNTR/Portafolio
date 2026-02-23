@@ -67,7 +67,7 @@ const ContactPage = () => {
                 <div>
                   <label htmlFor="email" className="block text-gray-400 text-sm mb-2">{tr.contact.email}</label>
                   <input type="email" id="email" name="email" required value={formData.email} onChange={handleChange}
-                    placeholder="tu@email.com"
+                    placeholder={tr.contact.emailPlaceholder}
                     className="w-full bg-dark-bg border border-slate-700 focus:border-primary rounded-xl px-4 py-3 text-white placeholder-gray-500 outline-none transition-colors" />
                 </div>
               </div>
@@ -91,18 +91,10 @@ const ContactPage = () => {
               </Button>
 
               {status === 'success' && (
-                <p className="text-green-400 text-center font-medium">
-                  {lang === 'es'
-                    ? '✅ ¡Mensaje enviado con éxito! Te contactaré pronto.'
-                    : '✅ Message sent successfully! I will contact you soon.'}
-                </p>
+                <p className="text-green-400 text-center font-medium">{tr.contact.successMsg}</p>
               )}
               {status === 'error' && (
-                <p className="text-red-400 text-center font-medium">
-                  {lang === 'es'
-                    ? '❌ Error al enviar. Por favor inténtalo de nuevo.'
-                    : '❌ Failed to send. Please try again.'}
-                </p>
+                <p className="text-red-400 text-center font-medium">{tr.contact.errorMsg}</p>
               )}
             </form>
           </FadeLeft>

@@ -59,6 +59,7 @@ export interface Translations {
     name: string;
     namePlaceholder: string;
     email: string;
+    emailPlaceholder: string;
     subject: string;
     subjectPlaceholder: string;
     message: string;
@@ -66,6 +67,8 @@ export interface Translations {
     sending: string;
     send: string;
     locationLabel: string;
+    successMsg: string;
+    errorMsg: string;
   };
   footer: {
     rights: string;
@@ -168,6 +171,9 @@ export const translations: Record<Lang, Translations> = {
       sending:            '⏳ Enviando...',
       send:               '🚀 Enviar Mensaje',
       locationLabel:      'Ubicación',
+      successMsg:         '✅ ¡Mensaje enviado con éxito! Te contactaré pronto.',
+      errorMsg:           '❌ Error al enviar. Por favor inténtalo de nuevo.',
+      emailPlaceholder:   'tu@email.com',
     },
     footer: {
       rights: 'Todos los derechos reservados.',
@@ -266,6 +272,9 @@ export const translations: Record<Lang, Translations> = {
       sending:            '⏳ Sending...',
       send:               '🚀 Send Message',
       locationLabel:      'Location',
+      successMsg:         '✅ Message sent successfully! I will contact you soon.',
+      errorMsg:           '❌ Failed to send. Please try again.',
+      emailPlaceholder:   'your@email.com',
     },
     footer: {
       rights: 'All rights reserved.',
