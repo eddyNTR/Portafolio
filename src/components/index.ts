@@ -10,5 +10,6 @@ export { default as SectionWrapper } from './SectionWrapper';
 export { default as ProgressBar } from './ProgressBar';
 export { default as ProjectCard } from './ProjectCard';
 export { default as ProjectGalleryModal } from './ProjectGalleryModal';
+export { default as LanguageSwitcher } from './LanguageSwitcher';
 export type { Project } from '../core/types';
 export { FadeUp, FadeLeft, FadeRight, ScaleIn, StaggerContainer, StaggerItem } from './Animate';

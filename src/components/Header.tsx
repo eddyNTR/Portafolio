@@ -2,10 +2,24 @@ import { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 // Los links vienen de core/data para mantener un único punto de verdad
 import { NAV_LINKS, PERSONAL_INFO } from '../core/data';
+import { useLanguage } from '../context/LanguageContext';
+import { t, type Translations } from '../core/i18n';
+import LanguageSwitcher from './LanguageSwitcher';
+
+// Mapea la ruta de cada NavLink a su clave en las traducciones
+const NAV_KEY_MAP: Record<string, keyof Translations['nav']> = {
+  '/':            'home',
+  '/sobre-mi':    'about',
+  '/habilidades': 'skills',
+  '/proyectos':   'projects',
+  '/contacto':    'contact',
+};
 
 // El componente Header maneja la navegación multi-página y es responsivo
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { lang } = useLanguage();
+  const tr = t(lang);
 
   // Clase para el menú móvil
   const mobileLinkClass = ({ isActive }: { isActive: boolean }) =>
@@ -33,7 +47,7 @@ const Header = () => {
             <div className="ml-10 flex items-center space-x-1">
               {NAV_LINKS.map((link) => (
                 <NavLink
-                  key={link.name}
+                  key={link.to}
                   to={link.to}
                   end={link.to === '/'}
                   className={({ isActive }) =>
@@ -46,7 +60,7 @@ const Header = () => {
                 >
                   {({ isActive }) => (
                     <>
-                      {link.name}
+                      {tr.nav[NAV_KEY_MAP[link.to]]}
                       {/* Underline animado: crece desde el centro al hacer hover o activo */}
                       <span className={`absolute bottom-0.5 left-1/2 -translate-x-1/2 h-0.5 bg-primary-light rounded-full transition-all duration-300 ${
                         isActive ? 'w-4/5' : 'w-0 group-hover:w-4/5'
@@ -55,11 +69,17 @@ const Header = () => {
                   )}
                 </NavLink>
               ))}
+
+              {/* Switch de idioma — solo visible en desktop */}
+              <div className="ml-3 pl-3 border-l border-primary/20">
+                <LanguageSwitcher />
+              </div>
             </div>
           </div>
 
-          {/* Botón menú móvil (hamburguesa) */}
-          <div className="md:hidden">
+          {/* Switch de idioma móvil + Botón hamburguesa */}
+          <div className="md:hidden flex items-center gap-2">
+            <LanguageSwitcher />
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-primary/20 focus:outline-none"
@@ -83,14 +103,14 @@ const Header = () => {
           <div className="px-4 pt-3 pb-4 space-y-1.5">
             {NAV_LINKS.map((link, i) => (
               <NavLink
-                key={link.name}
+                key={link.to}
                 to={link.to}
                 end={link.to === '/'}
                 onClick={() => setIsOpen(false)}
                 className={mobileLinkClass}
                 style={{ animationDelay: `${i * 0.05}s` }}
               >
-                {link.name}
+                {tr.nav[NAV_KEY_MAP[link.to]]}
               </NavLink>
             ))}
           </div>

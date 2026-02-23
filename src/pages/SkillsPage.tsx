@@ -1,14 +1,18 @@
 import { SectionHeader, SectionWrapper, ProgressBar, FadeUp, StaggerContainer, StaggerItem } from '../components';
 import { SKILLS, SKILL_CATEGORIES, EXTRA_TECHS } from '../core/data';
+import { useLanguage } from '../context/LanguageContext';
+import { t } from '../core/i18n';
 
 // Página de Habilidades
 const SkillsPage = () => {
+  const { lang } = useLanguage();
+  const tr = t(lang);
   return (
     <SectionWrapper id="habilidades" bg="dark">
         <SectionHeader
-          title="Mis"
-          highlight="Habilidades"
-          subtitle="Tecnologías y herramientas que utilizo para crear proyectos de alta calidad."
+          title={tr.skills.sectionTitle}
+          highlight={tr.skills.sectionHighlight}
+          subtitle={tr.skills.subtitle}
         />
 
         {/* Grid de categorías — entran escalonadas */}
@@ -16,7 +20,9 @@ const SkillsPage = () => {
           {SKILL_CATEGORIES.map((cat) => (
             <StaggerItem key={cat.key}>
               <div className="bg-slate-900 rounded-2xl p-6 border border-primary/20 h-full">
-                <h3 className="text-xl font-bold text-primary-light mb-6 text-center">{cat.label}</h3>
+                <h3 className="text-xl font-bold text-primary-light mb-6 text-center">
+                  {tr.skills.categories[cat.key]}
+                </h3>
                 <div className="space-y-5">
                   {SKILLS
                     .filter((s) => s.category === cat.key)
@@ -37,7 +43,7 @@ const SkillsPage = () => {
 
         {/* Badges escalonados */}
         <FadeUp delay={0.3} className="mt-16 text-center">
-          <p className="text-gray-400 mb-6">También trabajo con:</p>
+          <p className="text-gray-400 mb-6">{tr.skills.alsoWorkWith}</p>
           <StaggerContainer className="flex flex-wrap justify-center gap-2 sm:gap-3" stagger={0.04}>
             {EXTRA_TECHS.map((tech) => (
               <StaggerItem key={tech} className="inline-flex">

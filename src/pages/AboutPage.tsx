@@ -1,11 +1,15 @@
 import { Button, SectionHeader, SectionWrapper, FadeLeft, ScaleIn, StaggerContainer, StaggerItem } from '../components';
-import { PERSONAL_INFO, STATS } from '../core/data';
+import { PERSONAL_INFO } from '../core/data';
+import { useLanguage } from '../context/LanguageContext';
+import { t } from '../core/i18n';
 
 // Página Sobre Mi
 const AboutPage = () => {
+  const { lang } = useLanguage();
+  const tr = t(lang);
   return (
     <SectionWrapper id="sobre-mi" bg="slate">
-        <SectionHeader title="Sobre" highlight="Mi" />
+        <SectionHeader title={tr.about.sectionTitle} highlight={tr.about.sectionHighlight} />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Imagen — zoom de entrada */}
@@ -29,17 +33,17 @@ const AboutPage = () => {
 
           {/* Texto — entra desde la derecha */}
           <FadeLeft className="text-center lg:text-left">
-            <h3 className="text-2xl font-bold text-white mb-4">{PERSONAL_INFO.role}</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">{tr.about.role}</h3>
 
             <p className="text-gray-300 leading-relaxed mb-6">
-              Mi nombre es <span className="text-primary-light font-semibold">{PERSONAL_INFO.name}</span>,{' '}
-              {PERSONAL_INFO.bio1}
+              {tr.about.bioIntro} <span className="text-primary-light font-semibold">{PERSONAL_INFO.name}</span>,{' '}
+              {tr.about.bio1}
             </p>
-            <p className="text-gray-300 leading-relaxed mb-8">{PERSONAL_INFO.bio2}</p>
+            <p className="text-gray-300 leading-relaxed mb-8">{tr.about.bio2}</p>
 
             {/* Estadísticas — entran escalonadas */}
             <StaggerContainer className="grid grid-cols-3 gap-4 mb-8" delay={0.1} stagger={0.1}>
-              {STATS.map((stat) => (
+              {tr.about.stats.map((stat) => (
                 <StaggerItem key={stat.label}>
                   <div className="bg-dark-card rounded-xl p-4 border border-primary/20 text-center">
                     <p className="text-3xl font-bold text-primary-light">{stat.value}</p>
@@ -50,8 +54,8 @@ const AboutPage = () => {
             </StaggerContainer>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button href={PERSONAL_INFO.cv} variant="solid" download>Descargar CV</Button>
-              <Button to="/contacto" variant="outline">Contáctame</Button>
+              <Button href={PERSONAL_INFO.cv} variant="solid" download>{tr.about.downloadCV}</Button>
+              <Button to="/contacto" variant="outline">{tr.about.contactMe}</Button>
             </div>
           </FadeLeft>
         </div>

@@ -2,9 +2,13 @@ import { motion } from 'framer-motion';
 import { Button } from '../components';
 import { PERSONAL_INFO } from '../core/data';
 import { FadeRight, FadeLeft } from '../components';
+import { useLanguage } from '../context/LanguageContext';
+import { t } from '../core/i18n';
 
 // Página de Inicio — presentación principal del portfolio
 const HomePage = () => {
+  const { lang } = useLanguage();
+  const tr = t(lang);
   return (
     <section id="inicio" className="flex-1 flex items-center justify-center relative bg-dark-bg overflow-hidden py-16">
       {/* Patrón de puntos de fondo */}
@@ -36,7 +40,7 @@ const HomePage = () => {
             transition={{ delay: 0.1, duration: 0.4 }}
             className="text-primary-light text-lg font-semibold mb-2"
           >
-            ¡Hola! Soy
+            {tr.home.greeting}
           </motion.p>
 
           {/* Nombre con degradado morado — viene de PERSONAL_INFO */}
@@ -59,7 +63,7 @@ const HomePage = () => {
             transition={{ delay: 0.35, duration: 0.5 }}
             className="text-gray-300 text-lg sm:text-xl mb-8 max-w-lg mx-auto md:mx-0"
           >
-            {PERSONAL_INFO.tagline}
+            {tr.home.tagline}
           </motion.p>
 
           <motion.div
@@ -68,8 +72,8 @@ const HomePage = () => {
             transition={{ delay: 0.5, duration: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
           >
-            <Button to="/proyectos" variant="solid" className="px-8">Ver Proyectos</Button>
-            <Button to="/contacto" variant="outline" className="px-8">Contáctame</Button>
+            <Button to="/proyectos" variant="solid" className="px-8">{tr.home.viewProjects}</Button>
+            <Button to="/contacto" variant="outline" className="px-8">{tr.home.contactMe}</Button>
           </motion.div>
 
           {/* Links de redes sociales */}
