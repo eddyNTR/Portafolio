@@ -9,6 +9,8 @@ import { useState } from 'react';
 import { Icon } from '@iconify/react';
 import ProjectGalleryModal from './ProjectGalleryModal';
 import type { Project } from '../core/types';
+import { useLanguage } from '../hooks/useLanguage';
+import { t } from '../core/i18n';
 
 interface ProjectCardProps {
   project: Project;
@@ -17,6 +19,8 @@ interface ProjectCardProps {
 const ProjectCard = ({ project }: ProjectCardProps) => {
   const [galleryOpen, setGalleryOpen] = useState(false);
   const [currentImg, setCurrentImg] = useState(0);
+  const { lang } = useLanguage();
+  const tr = t(lang).projects;
 
   // Usa `images` si existe y tiene contenido, sino usa la imagen principal
   const gallery = project.images && project.images.length > 0
@@ -49,7 +53,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           {/* Badge "Destacado" */}
           {project.featured && (
             <span className="absolute top-3 right-3 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full z-10">
-              ⭐ Destacado
+              {tr.featured}
             </span>
           )}
 
@@ -59,7 +63,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
               <Icon icon="lucide:images" width={24} height={24} className="text-white" />
             </div>
             <span className="text-white text-sm font-semibold">
-              Ver galería
+              {tr.viewGallery}
               {gallery.length > 1 && (
                 <span className="ml-1 text-primary-light">({gallery.length})</span>
               )}
@@ -100,7 +104,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 text-gray-400 hover:text-white text-sm font-medium transition-colors"
             >
-              <Icon icon="lucide:github" width={14} height={14} /> Código
+              <Icon icon="lucide:github" width={14} height={14} /> {tr.code}
             </a>
           </div>
         </div>

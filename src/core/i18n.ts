@@ -47,6 +47,9 @@ export interface Translations {
     sectionHighlight: string;
     subtitle: string;
     viewMore: string;
+    featured: string;
+    viewGallery: string;
+    code: string;
     items: { id: number; title: string; description: string }[];
   };
   contact: {
@@ -115,6 +118,9 @@ export const translations: Record<Lang, Translations> = {
       sectionHighlight: 'Proyectos',
       subtitle:         'Una selección de mis trabajos más recientes y destacados.',
       viewMore:         'Ver más en GitHub →',
+      featured:         '⭐ Destacado',
+      viewGallery:      'Ver galería',
+      code:             'Código',
       items: [
         {
           id: 1,
@@ -205,6 +211,9 @@ export const translations: Record<Lang, Translations> = {
       sectionHighlight: 'Projects',
       subtitle:         'A selection of my most recent and outstanding work.',
       viewMore:         'View more on GitHub →',
+      featured:         '⭐ Featured',
+      viewGallery:      'View gallery',
+      code:             'Code',
       items: [
         {
           id: 1,

@@ -31,7 +31,7 @@ const ProjectsPage = () => {
         </StaggerContainer>
 
         <FadeUp delay={0.3} className="text-center mt-12">
-          <Button href="https://github.com" variant="outline" external className="px-8 inline-flex items-center gap-2">
+          <Button href="https://github.com/eddyNTR" variant="outline" external className="px-8 inline-flex items-center gap-2">
             {tr.projects.viewMore}
           </Button>
         </FadeUp>
