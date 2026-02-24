@@ -5,6 +5,7 @@
 // =============================================================================
 
 import { useLanguage } from '../hooks/useLanguage';
+import { Icon } from '@iconify/react';
 
 const LanguageSwitcher = () => {
   const { lang, toggleLang } = useLanguage();
@@ -34,19 +35,19 @@ const LanguageSwitcher = () => {
 
       <span
         className={`
-          relative z-10 px-2.5 py-1.5 transition-colors duration-200
-          ${!isEn ? 'text-primary-light' : 'text-gray-400'}
+          relative z-10 px-2.5 py-1.5 transition-all duration-200 flex items-center
+          ${!isEn ? 'opacity-100 scale-110' : 'opacity-50 scale-95'}
         `}
       >
-        ES
+        <Icon icon="circle-flags:es" width={20} height={20} />
       </span>
       <span
         className={`
-          relative z-10 px-2.5 py-1.5 transition-colors duration-200
-          ${isEn ? 'text-primary-light' : 'text-gray-400'}
+          relative z-10 px-2.5 py-1.5 transition-all duration-200 flex items-center
+          ${isEn ? 'opacity-100 scale-110' : 'opacity-50 scale-95'}
         `}
       >
-        EN
+        <Icon icon="circle-flags:us" width={20} height={20} />
       </span>
     </button>
   );
