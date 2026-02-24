@@ -50,13 +50,6 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             }}
           />
 
-          {/* Badge "Destacado" */}
-          {project.featured && (
-            <span className="absolute top-3 right-3 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full z-10">
-              {tr.featured}
-            </span>
-          )}
-
           {/* Overlay hover — muestra icono de galería */}
           <div className="absolute inset-0 bg-black/55 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-2">
             <div className="bg-white/15 border border-white/30 rounded-full p-3">
